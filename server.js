@@ -7,7 +7,7 @@ Task = require('./api/models/todoListModel'), //created model loading here
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Tododb', { useNewUrlParser: true }, { useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost/Tododb', { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
