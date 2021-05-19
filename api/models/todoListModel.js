@@ -1,24 +1,23 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 
-
-const TaskSchema = new Schema({
+var TaskSchema = new Schema({
     name: {
         type: String,
-        required: 'Kindly enter the name of task'
+        required: 'Kindly enter the name of the task'
     },
-    Creted_Date: {
+    Created_date: {
         type: Date,
-        default: Date.now()
+        default: Date.now
     },
-    Status: {
+    status: {
         type: [{
             type: String,
-            enum: ['pending', 'ongoing', 'complete']
+            enum: ['pending', 'ongoing', 'completed']
         }],
         default: ['pending']
-    },
-})
+    }
+});
 
-module.export = mongoose.model('Task', TaskSchema)
+module.exports = mongoose.model('Tasks', TaskSchema);
